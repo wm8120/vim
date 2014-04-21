@@ -4,23 +4,31 @@ if $TERM == 'xterm-256color'
 endif
 
 set number
-colorscheme distinguished
 set ruler
 syntax on
 
-"cscope
-	nmap <C-_>s :cs find s <C-R>=expand("<cword>")<CR><CR>
-	nmap <C-_>g :cs find g <C-R>=expand("<cword>")<CR><CR>
-	nmap <C-_>c :cs find c <C-R>=expand("<cword>")<CR><CR>
-	nmap <C-_>t :cs find t <C-R>=expand("<cword>")<CR><CR>
-	nmap <C-_>e :cs find e <C-R>=expand("<cword>")<CR><CR>
-	nmap <C-_>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
-	nmap <C-_>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-	nmap <C-_>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+""""" Color Theme """""
+colorscheme jellybeans
+"molokai theme config
+"let g:molokai_original = 1     " to match original background color
+"let g:rehash256 = 1     "under development version, targeting to aproach GUI version
 
-"for python indent
+""""" cscope configuration """""
+nmap <C-_>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+nmap <C-_>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nmap <C-_>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+
+""""" for python indent """""
 set expandtab
 set softtabstop=4
+
+" prevent expand tab in makefiel
+autocmd FileType make setlocal noexpandtab
 
 "indent
 set shiftwidth=4
@@ -29,3 +37,4 @@ set autoindent
 "taglist config
 nmap <silent> <F9> :TlistToggle<cr>
 let Tlist_Exit_OnlyWindow = 1       "exit when taglist is the last open window
+
