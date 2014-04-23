@@ -8,10 +8,16 @@ set ruler
 syntax on
 
 """"" Color Theme """""
-colorscheme jellybeans
-"molokai theme config
+"colorscheme jellybeans
+"" molokai theme config
 "let g:molokai_original = 1     " to match original background color
 "let g:rehash256 = 1     "under development version, targeting to aproach GUI version
+"" solarized config
+set background=dark    "bg can set to light or dark
+call togglebg#map("<F5>")   "use the key within quote to toggle light or dark bg
+"let g:solarized_termcolors=256 "for the terminal without custom solarized theme
+colorscheme solarized
+
 
 """"" cscope configuration """""
 nmap <C-_>s :cs find s <C-R>=expand("<cword>")<CR><CR>
@@ -27,14 +33,20 @@ nmap <C-_>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 set expandtab
 set softtabstop=4
 
-" prevent expand tab in makefiel
+""""" prevent expand tab in makefile """""
 autocmd FileType make setlocal noexpandtab
 
-"indent
+""""" indent """""
 set shiftwidth=4
 set autoindent
 
-"taglist config
+""""" taglist config """""
 nmap <silent> <F9> :TlistToggle<cr>
 let Tlist_Exit_OnlyWindow = 1       "exit when taglist is the last open window
+
+""""" vim-airline """""
+set laststatus=2  "always show status bar
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
 
