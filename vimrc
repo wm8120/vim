@@ -3,6 +3,8 @@ if $TERM == 'xterm-256color'
   set t_Co=256
 endif
 
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect()
 set number
 set ruler
 syntax on
@@ -45,8 +47,10 @@ nmap <silent> <F9> :TlistToggle<cr>
 let Tlist_Exit_OnlyWindow = 1       "exit when taglist is the last open window
 
 """"" vim-airline """""
+set ttimeoutlen=50 "reduce the pause when leaving insert mode
 set laststatus=2  "always show status bar
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline_powerline_fonts = 1
 
