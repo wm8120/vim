@@ -3,6 +3,9 @@ if $TERM == 'xterm-256color'
   set t_Co=256
 endif
 
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect()
+
 set number
 set bg=dark
 colorscheme solarized
