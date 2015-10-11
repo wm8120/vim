@@ -8,6 +8,7 @@ execute pathogen#infect()
 set number
 set ruler
 syntax on
+filetype indent on
 
 """"" Color Theme """""
 "colorscheme jellybeans
