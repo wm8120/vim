@@ -13,6 +13,7 @@ execute pathogen#infect()
 set number
 set ruler
 syntax on
+filetype indent on
 
 
 " Uncomment the following to have Vim jump to the last position when                                                       
@@ -55,6 +56,10 @@ let Tlist_Exit_OnlyWindow = 1       "exit when taglist is the last open window
 let Tlist_Use_Right_Window = 1      "show on right side
 let Tlist_WinWidth = 40             "default window width 
 
+""""" NERDTree config """""
+nmap <silent> <F8> :NERDTreeToggle<cr>
+"exit when NERDTree is the last open window
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 """"" vim-airline """""
 set ttimeoutlen=50 "reduce the pause when leaving insert mode
