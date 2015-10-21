@@ -54,6 +54,10 @@ set autoindent
 nmap <silent> <F9> :TlistToggle<cr>
 let Tlist_Exit_OnlyWindow = 1       "exit when taglist is the last open window
 
+""""" NERDTree config """""
+nmap <silent> <F8> :NERDTreeToggle<cr>
+"exit when NERDTree is the last open window
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 """"" vim-airline """""
 set ttimeoutlen=50 "reduce the pause when leaving insert mode
