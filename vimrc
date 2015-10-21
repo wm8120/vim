@@ -52,6 +52,8 @@ set autoindent
 """"" taglist config """""
 nmap <silent> <F9> :TlistToggle<cr>
 let Tlist_Exit_OnlyWindow = 1       "exit when taglist is the last open window
+let Tlist_Use_Right_Window = 1      "show on right side
+let Tlist_WinWidth = 40             "default window width 
 
 
 """"" vim-airline """""
