@@ -1,11 +1,10 @@
 "for 256 colors terminal
-" try to comment out the conditional branch and use let &t_Co=256 instead
-" if $TERM == 'xterm-256color'
-"   set t_Co=256
-" endif
+"try to comment out the conditional branch and use let &t_Co=256 instead
+if $TERM == 'xterm-256color'
+   set t_Co=256
+endif
 
-let &t_Co=256
-
+"let &t_Co=256
 
 """" some common used config """"
 runtime bundle/vim-pathogen/autoload/pathogen.vim
@@ -25,15 +24,17 @@ endif
 
 
 """"" Color Theme """""
+
 "" molokai theme config ""
-"let g:molokai_original = 1     " to match original background color
-"let g:rehash256 = 1     "under development version, targeting to aproach GUI version
+" let g:molokai_original = 1     " to match original background color
+" let g:rehash256 = 1     "under development version, targeting to aproach GUI version
 
 "" solarized config ""
-" set background=dark    "bg can set to light or dark
-call togglebg#map("<F5>")   "use the key within quote to toggle light or dark bg
+set background=dark     "bg can set to light or dark
+" call togglebg#map("<F5>")   "use the key within quote to toggle light or dark bg
 "let g:solarized_termcolors=256 "for the terminal without custom solarized theme
-" colorscheme solarized
+
+colorscheme gardener
 
 
 """"" for python indent """""
@@ -51,7 +52,7 @@ set autoindent
 
 
 """"" specll check """""
-:map <F7> :setlocal spell! spelllang=en_us<CR>
+:map <silent> <F7> :setlocal spell! spelllang=en_us<cr>
 
 
 """"" taglist config """""
@@ -61,15 +62,18 @@ let Tlist_Use_Right_Window = 1      "show on right side
 let Tlist_WinWidth = 40             "default window width 
 autocmd CursorMovedI * silent! TlistHighlightTag
 
+
 """"" NERDTree config """""
 nmap <silent> <F8> :NERDTreeToggle<cr>
 "exit when NERDTree is the last open window
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
+
 """" Mouse config """""
 set ttyfast
 set mouse=a
 set ttymouse=xterm2
+
 
 """"" vim-airline """""
 set ttimeoutlen=50 "reduce the pause when leaving insert mode
@@ -78,4 +82,3 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_powerline_fonts = 1
-

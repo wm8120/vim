@@ -34,3 +34,21 @@
 [submodule "bundle/nerdtree-git-plugin"]
 	path = bundle/nerdtree-git-plugin
 	url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
+[submodule "bundle/zenburn"]
+	path = bundle/zenburn
+	url = https://github.com/jnurmine/Zenburn.git
+[submodule "bundle/wombat"]
+	path = bundle/wombat
+	url = https://github.com/vim-scripts/Wombat.git
+[submodule "bundle/vim-tomorrow-theme"]
+	path = bundle/vim-tomorrow-theme
+	url = https://github.com/chriskempson/vim-tomorrow-theme.git
+[submodule "bundle/molokai"]
+	path = bundle/molokai
+	url = https://github.com/tomasr/molokai.git
+[submodule "bundle/peaksea"]
+	path = bundle/peaksea
+	url = https://github.com/vim-scripts/peaksea.git
+[submodule "bundle/gardener"]
+	path = bundle/gardener
+	url = https://github.com/vim-scripts/The-Vim-Gardener.git
