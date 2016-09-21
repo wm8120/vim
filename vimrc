@@ -11,8 +11,8 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 set number
 set ruler
+filetype plugin indent on
 syntax on
-filetype indent on
 
 
 """" save tmp files to another folder """"
