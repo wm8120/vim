@@ -15,6 +15,19 @@ syntax on
 filetype indent on
 
 
+"""" save tmp files to another folder """"
+if !isdirectory($HOME."/.vimtmps")
+    call mkdir($HOME."/.vimtmps/backup", "p")
+    call mkdir($HOME."/.vimtmps/swap", "p")
+    call mkdir($HOME."/.vimtmps/undo", "p")
+endif
+"" specifying two trailing slashes, vim will create swap files
+"" using the whole path of the files being edited to avoid collisions
+set backupdir=$HOME/.vimtmps/backup//
+set directory=$HOME/.vimtmps/swap//
+set undodir=$HOME/.vimtmps/undo//
+
+
 " Uncomment the following to have Vim jump to the last position when                                
 " reopening a file
 if has("autocmd")
