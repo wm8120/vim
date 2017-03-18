@@ -9,7 +9,6 @@ edu
 LaTeX
 APIs
 ALU
-nm
 HPCA
 eMMC
 fsync
@@ -18,9 +17,12 @@ SSD
 iPhone
 NVMe
 UFS
-iPhone
-iPhone
-iPhone
 metadata
-iPhone
 journaling
+GEM5
+kubernetes
+SQLite
+writeback
+ext4
+AOSP
+virtualization

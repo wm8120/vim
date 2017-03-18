@@ -66,6 +66,12 @@ set autoindent
 
 """"" specll check """""
 :map <silent> <F7> :setlocal spell! spelllang=en_us<cr>
+"rebuild the .spl file each time the .add file has been updated when vim is started
+for d in glob('~/.vim/spell/*.add', 1, 1)
+    if filereadable(d) && (!filereadable(d . '.spl') || getftime(d) > getftime(d . '.spl'))
+        exec 'mkspell! ' . fnameescape(d)
+    endif
+endfor
 
 
 """"" taglist config """""
@@ -80,6 +86,10 @@ autocmd CursorMovedI * silent! TlistHighlightTag
 nmap <silent> <F8> :NERDTreeToggle<cr>
 "exit when NERDTree is the last open window
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+
+"""" vimtex config """"
+let g:vimtex_latexmk_callback = 0
 
 
 """" Mouse config """""

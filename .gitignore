@@ -1,1 +1,7 @@
+# top level dot files #
+#######################
 /.netrwhist
+
+# spell binary file #
+#####################
+spell/*.spl
