@@ -82,6 +82,10 @@ nmap <silent> <F8> :NERDTreeToggle<cr>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 
+"""" vimtex config """"
+let g:vimtex_latexmk_callback = 0
+
+
 """" Mouse config """""
 set ttyfast
 set mouse=a
