@@ -1,10 +1,8 @@
 "for 256 colors terminal
 "try to comment out the conditional branch and use let &t_Co=256 instead
-if $TERM == 'xterm-256color'
+if $TERM == 'xterm-256color' || $TERM == 'screen' || $TERM == 'screen-256color'
    set t_Co=256
 endif
-
-"let &t_Co=256
 
 """" some common used config """"
 runtime bundle/vim-pathogen/autoload/pathogen.vim
