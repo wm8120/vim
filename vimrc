@@ -35,17 +35,18 @@ endif
 
 
 """"" Color Theme """""
-
-"" molokai theme config ""
-" let g:molokai_original = 1     " to match original background color
-" let g:rehash256 = 1     "under development version, targeting to aproach GUI version
-
-"" solarized config ""
 set background=dark     "bg can set to light or dark
 " call togglebg#map("<F5>")   "use the key within quote to toggle light or dark bg
-"let g:solarized_termcolors=256 "for the terminal without custom solarized theme
-
 colorscheme gardener
+
+
+""""" Italic Setting """""
+" note that ^[ are not literal characters but represent the escape character, it can be insertet with CTRL-V followed by ESC (see :help i_CTRL-V)
+if $TERM == 'xterm-256color' || $TERM == 'screen-256color-italic'
+    set t_ZH=[3m
+    set t_ZR=[23m
+    highlight Comment cterm=italic
+endif
 
 
 """"" for python indent """""
