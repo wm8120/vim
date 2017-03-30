@@ -42,11 +42,11 @@ colorscheme gardener
 
 """"" Italic Setting """""
 " note that ^[ are not literal characters but represent the escape character, it can be insertet with CTRL-V followed by ESC (see :help i_CTRL-V)
-if $TERM == 'xterm-256color' || $TERM == 'screen-256color-italic'
+if $TERM == 'xterm-256color'
     set t_ZH=[3m
     set t_ZR=[23m
-    highlight Comment cterm=italic
 endif
+highlight Comment cterm=italic
 
 
 """"" for python indent """""
