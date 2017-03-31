@@ -51,7 +51,7 @@
 	url = https://github.com/vim-scripts/peaksea.git
 [submodule "bundle/gardener"]
 	path = bundle/gardener
-	url = https://github.com/vim-scripts/The-Vim-Gardener.git
+	url = https://github.com/wm8120/The-Vim-Gardener
 [submodule "bundle/csv.vim"]
 	path = bundle/csv.vim
 	url = https://github.com/chrisbra/csv.vim.git
