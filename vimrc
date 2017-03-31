@@ -1,8 +1,15 @@
-"for 256 colors terminal
-"try to comment out the conditional branch and use let &t_Co=256 instead
+"""" global variables """"
+" for 256 colors terminal
 if $TERM == 'xterm-256color' || $TERM == 'screen' || $TERM == 'screen-256color'
    set t_Co=256
 endif
+
+" italic support
+let s:italic_support = 0
+if $TERM == 'xterm-256color' || $TERM == 'xterm-256color-italic' || $TERM == 'screen-256color-italic'
+    let s:italic_support = 1
+endif
+
 
 """" some common used config """"
 runtime bundle/vim-pathogen/autoload/pathogen.vim
@@ -11,6 +18,8 @@ set number
 set ruler
 filetype plugin indent on
 syntax on
+set hlsearch
+set incsearch
 
 
 """" save tmp files to another folder """"
@@ -35,9 +44,17 @@ endif
 
 
 """"" Color Theme """""
+
 set background=dark     "bg can set to light or dark
-" call togglebg#map("<F5>")   "use the key within quote to toggle light or dark bg
+call togglebg#map("<F5>")   "use the key within quote to toggle light or dark bg
+
 colorscheme gardener
+
+"" pencil adaption ""
+if g:colors_name == 'pencil' && s:italic_support == 1
+    let g:pencil_terminal_italics = 1
+    colorscheme pencil " refresh for italic can take effect
+endif
 
 
 """"" Italic Setting """""
@@ -46,7 +63,9 @@ if $TERM == 'xterm-256color'
     set t_ZH=[3m
     set t_ZR=[23m
 endif
-highlight Comment cterm=italic
+if s:italic_support == 1
+    highlight Comment cterm=italic
+endif
 
 
 """"" for python indent """""

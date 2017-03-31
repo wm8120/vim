@@ -58,3 +58,6 @@
 [submodule "bundle/vimtex"]
 	path = bundle/vimtex
 	url = https://github.com/lervag/vimtex.git
+[submodule "bundle/vim-colors-pencil"]
+	path = bundle/vim-colors-pencil
+	url = https://github.com/reedes/vim-colors-pencil.git
