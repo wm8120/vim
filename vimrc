@@ -14,12 +14,13 @@ endif
 """" some common used config """"
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
+syntax on
+filetype plugin indent on
 set number
 set ruler
-filetype plugin indent on
-syntax on
 set hlsearch
 set incsearch
+set updatetime=800
 
 
 """" save tmp files to another folder """"
@@ -93,11 +94,15 @@ endfor
 
 
 """"" taglist config """""
-nmap <silent> <F9> :TlistToggle<cr>
-let Tlist_Exit_OnlyWindow = 1       "exit when taglist is the last open window
-let Tlist_Use_Right_Window = 1      "show on right side
-let Tlist_WinWidth = 40             "default window width 
-autocmd CursorMovedI * silent! TlistHighlightTag
+" nmap <silent> <F9> :TlistToggle<cr>
+" let Tlist_Exit_OnlyWindow = 1       "exit when taglist is the last open window
+" let Tlist_Use_Right_Window = 1      "show on right side
+" let Tlist_WinWidth = 40             "default window width 
+" autocmd CursorMovedI * silent! TlistHighlightTag
+"
+
+""""" tagbar config """""
+nmap <silent> <F9> :TagbarToggle<cr>
 
 
 """"" NERDTree config """""
