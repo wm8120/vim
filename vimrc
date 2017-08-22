@@ -49,7 +49,7 @@ endif
 set background=dark     "bg can set to light or dark
 call togglebg#map("<F5>")   "use the key within quote to toggle light or dark bg
 
-colorscheme pencil
+colorscheme Tomorrow-Night-Bright
 
 "" pencil adaption ""
 if g:colors_name == 'pencil' && s:italic_support == 1
