@@ -111,6 +111,23 @@ nmap <silent> <F8> :NERDTreeToggle<cr>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 
+""""" ctrlp config """""
+if executable('ag')
+    " Usage Ag over Grep
+    set grepprg=ag\ --nogroup\ --nocolor
+
+    " Use ag in CtrlP for listing files. Lightning fast and respects
+    " .gitignore
+    let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
+                \ --ignore .git
+                \ --ignore .svn
+                \ --ignore .hg
+                \ --ignore .DS_Store
+                \ --ignore "**/*.pyc"
+                \ -g ""'
+endif
+
+
 """" vimtex config """"
 let g:vimtex_latexmk_callback = 0
 
