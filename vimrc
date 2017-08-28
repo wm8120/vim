@@ -18,6 +18,7 @@ syntax on
 filetype plugin indent on
 set number
 set ruler
+set smartcase
 set hlsearch
 set incsearch
 set updatetime=800
