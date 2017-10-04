@@ -18,7 +18,9 @@ syntax on
 filetype plugin indent on
 set number
 set ruler
+set ignorecase
 set incsearch
+set smartcase
 set updatetime=800
 
 

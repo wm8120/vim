@@ -73,3 +73,6 @@
 [submodule "bundle/google-colorscheme"]
 	path = bundle/google-colorscheme
 	url = https://github.com/google/vim-colorscheme-primary.git
+[submodule "bundle/a.vim"]
+	path = bundle/a.vim
+	url = https://github.com/vim-scripts/a.vim.git
