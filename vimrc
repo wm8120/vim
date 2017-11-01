@@ -1,7 +1,12 @@
 """" global variables """"
-" for 256 colors terminal
-if $TERM == 'xterm-256color' || $TERM == 'screen' || $TERM == 'screen-256color'
-   set t_Co=256
+" for 256 colors terminal such as 'xterm-256color' and 'screen-256color'
+if $TERM =~ '256color'
+    set t_Co=256
+
+    " disable Background Color Erase (BCE) so that color schemes
+    " render properly when inside 256-color tmux and GNU screen.
+    " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
+    set t_ut=
 endif
 
 " italic support
@@ -42,8 +47,8 @@ set undodir=$HOME/.vimtmps/undo//
 " Uncomment the following to have Vim jump to the last position when                                
 " reopening a file
 if has("autocmd")
-   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-    \| exe "normal! g'\"" | endif
+    au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+                \| exe "normal! g'\"" | endif
 endif
 
 
