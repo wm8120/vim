@@ -1,3 +1,6 @@
+set nocompatible
+set runtimepath+=~/wm/vim/
+
 """" global variables """"
 " for 256 colors terminal such as 'xterm-256color' and 'screen-256color'
 if $TERM =~ '256color'
@@ -29,6 +32,7 @@ set hlsearch
 set incsearch
 set smartcase
 set updatetime=800
+set backspace=2
 
 
 """" save tmp files to another folder """"
