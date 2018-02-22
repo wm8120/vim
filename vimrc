@@ -44,12 +44,16 @@ set directory=$HOME/.vimtmps/swap//
 set undodir=$HOME/.vimtmps/undo//
 
 
-" Uncomment the following to have Vim jump to the last position when                                
+" Uncomment the following to have Vim jump to the last position when
 " reopening a file
 if has("autocmd")
     au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
                 \| exe "normal! g'\"" | endif
 endif
+
+
+" Remove trailing empties on save
+autocmd BufWritePre <buffer> :%s/\s\+$//ec
 
 
 """"" Color Theme """""
@@ -105,7 +109,7 @@ endfor
 " nmap <silent> <F9> :TlistToggle<cr>
 " let Tlist_Exit_OnlyWindow = 1       "exit when taglist is the last open window
 " let Tlist_Use_Right_Window = 1      "show on right side
-" let Tlist_WinWidth = 40             "default window width 
+" let Tlist_WinWidth = 40             "default window width
 " autocmd CursorMovedI * silent! TlistHighlightTag
 "
 
@@ -171,6 +175,6 @@ let g:airline_symbols.linenr = '␤'
 let g:airline_symbols.linenr = '¶'
 let g:airline_symbols.branch = '⎇'
 let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
+" let g:airline_symbols.paste = 'Þ'
+" let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
