@@ -111,3 +111,10 @@ let g:ycm_filetype_whitelist = {
             \ "hpp":1,
             \ "sh":1,
             \ }
+
+
+"""" echodoc """"
+" set no show mode to prevent overlap function signation
+" mode can still be viewed in vim-airline
+set noshowmode
+let g:echodoc_enable_at_startup = 1

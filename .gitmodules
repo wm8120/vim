@@ -7,3 +7,6 @@
 [submodule "pack/plugins/start/signify"]
 	path = pack/plugins/start/signify
 	url = https://github.com/mhinz/vim-signify.git
+[submodule "pack/plugins/start/echodoc"]
+	path = pack/plugins/start/echodoc
+	url = https://github.com/Shougo/echodoc.vim.git
