@@ -4,3 +4,6 @@
 [submodule "pack/plugins/start/YouCompleteMe"]
 	path = pack/plugins/start/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe.git
+[submodule "pack/plugins/start/signify"]
+	path = pack/plugins/start/signify
+	url = https://github.com/mhinz/vim-signify.git
