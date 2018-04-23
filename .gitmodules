@@ -16,3 +16,6 @@
 [submodule "/home/xps/.vim/pack/plugins/start/ale"]
 	path = /home/xps/.vim/pack/plugins/start/ale
 	url = https://github.com/w0rp/ale.git
+[submodule "/home/xps/.vim/pack/plugins/start/vim-airline"]
+	path = /home/xps/.vim/pack/plugins/start/vim-airline
+	url = https://github.com/vim-airline/vim-airline
