@@ -149,6 +149,11 @@ set noshowmode
 let g:echodoc_enable_at_startup = 1
 
 
+"""" polyglot """"
+" will use vimtex instead
+let g:polyglot_disabled = ['latex']
+
+
 """" ale """"
 " let g:ale_linters_explicit = 1
 " let g:ale_linters = {
