@@ -1,3 +1,32 @@
+"""" global variables """"
+" for 256 colors terminal such as 'xterm-256color' and 'screen-256color'
+if $TERM =~ '256color'
+    set t_Co=256
+endif
+
+" italic support
+let s:italic_support = 0
+if $TERM == 'xterm-256color' || $TERM == 'xterm-256color-italic' || $TERM == 'screen-256color-italic'
+    let s:italic_support = 1
+endif
+
+
+""""" Color Theme """""
+set background=light     "bg can set to light or dark
+colorscheme default
+
+
+""""" Italic Setting """""
+" note that ^[ are not literal characters but represent the escape character, it can be insertet with CTRL-V followed by ESC (see :help i_CTRL-V)
+if $TERM == 'xterm-256color'
+    set t_ZH=[3m
+    set t_ZR=[23m
+endif
+if s:italic_support == 1
+    highlight Comment cterm=italic
+endif
+
+
 """" some common used config """"
 syntax on
 filetype plugin indent on

@@ -19,3 +19,15 @@
 [submodule "/home/xps/.vim/pack/plugins/start/vim-airline"]
 	path = /home/xps/.vim/pack/plugins/start/vim-airline
 	url = https://github.com/vim-airline/vim-airline
+[submodule "pack/colors/start/vim-colors-pencil"]
+	path = pack/colors/start/vim-colors-pencil
+	url = https://github.com/reedes/vim-colors-pencil.git
+[submodule "pack/colors/start/gardener"]
+	path = pack/colors/start/gardener
+	url = https://github.com/wm8120/The-Vim-Gardener.git
+[submodule "pack/colors/start/tomorrow"]
+	path = pack/colors/start/tomorrow
+	url = https://github.com/chriskempson/vim-tomorrow-theme.git
+[submodule "pack/colors/start/vim-airline-themes"]
+	path = pack/colors/start/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes.git
