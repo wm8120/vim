@@ -11,22 +11,6 @@ if $TERM == 'xterm-256color' || $TERM == 'xterm-256color-italic' || $TERM == 'sc
 endif
 
 
-""""" Color Theme """""
-set background=light     "bg can set to light or dark
-colorscheme default
-
-
-""""" Italic Setting """""
-" note that ^[ are not literal characters but represent the escape character, it can be insertet with CTRL-V followed by ESC (see :help i_CTRL-V)
-if $TERM == 'xterm-256color'
-    set t_ZH=[3m
-    set t_ZR=[23m
-endif
-if s:italic_support == 1
-    highlight Comment cterm=italic
-endif
-
-
 """" some common used config """"
 syntax on
 filetype plugin indent on
@@ -52,6 +36,22 @@ autocmd FileType make setlocal noexpandtab
 """"" indent """""
 set shiftwidth=4
 set autoindent
+
+
+""""" Color Theme """""
+set background=light     "bg can set to light or dark
+colorscheme Tomorrow-Night-Bright
+
+
+""""" Italic Setting """""
+" note that ^[ are not literal characters but represent the escape character, it can be insertet with CTRL-V followed by ESC (see :help i_CTRL-V)
+if $TERM == 'xterm-256color'
+    set t_ZH=[3m
+    set t_ZR=[23m
+endif
+if s:italic_support == 1
+    highlight Comment cterm=italic
+endif
 
 
 """"" specll check """""
@@ -133,9 +133,9 @@ let g:ycm_semantic_triggers =  {
             \ }
 
 " white list to allow ycm run
-let g:ycm_filetype_whitelist = { 
+let g:ycm_filetype_whitelist = {
             \ "c":1,
-            \ "cpp":1, 
+            \ "cpp":1,
             \ "h":1,
             \ "hpp":1,
             \ "sh":1,
@@ -167,7 +167,7 @@ let g:ale_echo_msg_format = '[%linter%] %code: %%s'
 let g:ale_lint_on_text_changed = 'normal'
 let g:ale_lint_on_insert_leave = 1
 let g:airline#extensions#ale#enabled = 1
- 
+
 let g:ale_c_gcc_options = '-Wall -O2 -std=c99'
 let g:ale_cpp_gcc_options = '-Wall -O2 -std=c++14'
 let g:ale_c_cppcheck_options = ''
