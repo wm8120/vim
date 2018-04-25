@@ -1,5 +1,5 @@
-[submodule "pack/plugins/start/vim-gutentags"]
-	path = pack/plugins/start/vim-gutentags
+[submodule "pack/plugins/opt/vim-gutentags"]
+	path = pack/plugins/opt/vim-gutentags
 	url = https://github.com/ludovicchabant/vim-gutentags.git
 [submodule "pack/plugins/start/YouCompleteMe"]
 	path = pack/plugins/start/YouCompleteMe
