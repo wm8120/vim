@@ -43,3 +43,6 @@
 [submodule "pack/colors/start/primary"]
 	path = pack/colors/start/primary
 	url = https://github.com/google/vim-colorscheme-primary.git
+[submodule "pack/plugins/start/cscope_maps"]
+	path = pack/plugins/start/cscope_maps
+	url = https://github.com/chazy/cscope_maps.git
