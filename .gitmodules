@@ -40,3 +40,6 @@
 [submodule "pack/plugins/start/fzf.vim"]
 	path = pack/plugins/start/fzf.vim
 	url = https://github.com/junegunn/fzf.vim.git
+[submodule "pack/colors/start/primary"]
+	path = pack/colors/start/primary
+	url = https://github.com/google/vim-colorscheme-primary.git

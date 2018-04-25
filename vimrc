@@ -2,6 +2,10 @@
 " for 256 colors terminal such as 'xterm-256color' and 'screen-256color'
 if $TERM =~ '256color'
     set t_Co=256
+    " disable Background Color Erase (BCE) so that color schemes
+    " render properly when inside 256-color tmux and GNU screen.
+    " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
+    set t_ut=
 endif
 
 " italic support
@@ -39,8 +43,8 @@ set autoindent
 
 
 """"" Color Theme """""
-set background=light     "bg can set to light or dark
-colorscheme Tomorrow-Night-Bright
+set background=dark     "bg can set to light or dark
+colorscheme primary
 
 
 """"" Italic Setting """""
@@ -182,6 +186,7 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_powerline_fonts = 1
 
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
+" adaptive color
+if g:colors_name == 'primary'
+    let g:airline_theme = 'base16_google'
 endif
