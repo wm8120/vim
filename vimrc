@@ -193,3 +193,12 @@ let g:airline_powerline_fonts = 1
 if g:colors_name == 'primary'
     let g:airline_theme = 'base16_google'
 endif
+
+
+"""" key bindings """"
+nnoremap <silent> <F3> :YcmCompleter GoToDefinition <cr>
+nnoremap <silent> <c-p> :Files <cr>
+nnoremap <silent> <Leader>bs :Buffers <cr>
+nnoremap <silent> <Leader>bt :BTags <cr>
+nnoremap <silent> <Leader>tg :Tags <c-r><c-w> <cr>
+nnoremap <silent> <Leader>ag :Ag <c-r><c-w> <cr>
