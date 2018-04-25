@@ -52,3 +52,6 @@
 [submodule "pack/plugins/start/tabular"]
 	path = pack/plugins/start/tabular
 	url = https://github.com/godlygeek/tabular.git
+[submodule "pack/plugins/opt/YCM-Generator"]
+	path = pack/plugins/opt/YCM-Generator
+	url = https://github.com/rdnetto/YCM-Generator.git
