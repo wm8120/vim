@@ -202,6 +202,8 @@ nnoremap <silent> <c-p> :Files <cr>
 nnoremap <silent> <Leader>be :Buffers <cr>
 nnoremap <silent> <Leader>bt :BTags <cr>
 nnoremap <silent> <Leader>ag :Ag <c-r><c-w> <cr>
+nnoremap <silent> <Leader>ve :Vex <cr>
+nnoremap <silent> <Leader>se :Sex <cr>
 
 
 """" netrw config """"
