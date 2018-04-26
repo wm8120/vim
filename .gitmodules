@@ -55,3 +55,6 @@
 [submodule "pack/plugins/opt/YCM-Generator"]
 	path = pack/plugins/opt/YCM-Generator
 	url = https://github.com/rdnetto/YCM-Generator.git
+[submodule "pack/plugins/start/bufexplorer"]
+	path = pack/plugins/start/bufexplorer
+	url = https://github.com/jlanzarotta/bufexplorer.git
