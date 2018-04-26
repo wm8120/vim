@@ -26,6 +26,7 @@ set hlsearch
 set incsearch
 set smartcase
 set updatetime=800
+set splitright
 
 
 """"" for python indent """""
@@ -201,6 +202,7 @@ nnoremap <silent> <F4> :Tags <c-r><c-w> <cr>
 nnoremap <silent> <c-p> :Files <cr>
 nnoremap <silent> <Leader>bg :BTags <cr>
 nnoremap <silent> <Leader>ag :Ag <c-r><c-w> <cr>
+nnoremap <silent> <F9> :Vex! <cr>
 nnoremap <silent> <Leader>ve :Vex <cr>
 nnoremap <silent> <Leader>se :Sex <cr>
 
