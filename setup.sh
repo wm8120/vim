@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo apt install cmake
+
 git submodule update --init
 
 cd ./pack/plugins/start/YouCompleteMe/
