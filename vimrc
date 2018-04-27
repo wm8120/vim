@@ -27,6 +27,9 @@ set incsearch
 set smartcase
 set updatetime=800
 set splitright
+let mapleader = ","
+nnoremap ,, ,
+nnoremap , <NOP>
 
 
 """"" for python indent """""
@@ -198,10 +201,10 @@ endif
 
 """" key bindings """"
 nnoremap <silent> <F3> :YcmCompleter GoToDefinition <cr>
-nnoremap <silent> <F4> :Tags <c-r><c-w> <cr>
 nnoremap <silent> <c-p> :Files <cr>
-nnoremap <silent> <Leader>bg :BTags <cr>
+nnoremap <silent> <Leader>bt :BTags <cr>
 nnoremap <silent> <Leader>ag :Ag <c-r><c-w> <cr>
+nnoremap <silent> <Leader>gt :packadd vim-gutentags <cr>
 nnoremap <silent> <F9> :Vex! <cr>
 nnoremap <silent> <Leader>ve :Vex <cr>
 nnoremap <silent> <Leader>se :Sex <cr>
@@ -209,3 +212,9 @@ nnoremap <silent> <Leader>se :Sex <cr>
 
 """" netrw config """"
 let g:netrw_banner = 0
+
+
+"""" ack.vim config """"
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
