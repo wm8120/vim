@@ -98,15 +98,12 @@ autocmd BufWritePre <buffer> :%s/\s\+$//ec
 
 
 """" ctags config """"
-set tags=./.tags;,.tags
+set tags=./tags;,tags
 
 
 """" gutentags for auto tag update """"
 " recursively upward search such folders to determine project root
 let g:gutentags_project_root = ['.root', '.svn', '.git', '.hg', '.project']
-
-" name of the generated file
-let g:gutentags_ctags_tagfile = '.tags'
 
 " put the auto generated files into ~/.cache/tags
 let s:vim_tags = expand('~/.cache/tags')
@@ -118,7 +115,7 @@ if !isdirectory(s:vim_tags)
 endif
 
 " modules
-let g:gutentags_modules = ['ctags', 'cscope']
+let g:gutentags_modules = ['ctags']
 
 " ctags options
 let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
@@ -134,6 +131,7 @@ let g:ycm_min_num_identifier_candidate_chars = 2
 let g:ycm_collect_identifiers_from_comments_and_strings = 1
 let g:ycm_complete_in_strings=1
 let g:ycm_key_invoke_completion = '<c-z>'
+let g:ycm_confirm_extra_conf = 0
 set completeopt=menu,menuone
 
 noremap <c-z> <NOP>
@@ -200,14 +198,16 @@ endif
 
 
 """" key bindings """"
-nnoremap <silent> <F3> :YcmCompleter GoToDefinition <cr>
-nnoremap <silent> <c-p> :Files <cr>
-nnoremap <silent> <Leader>bt :BTags <cr>
-nnoremap <silent> <Leader>ag :Ag <c-r><c-w> <cr>
-nnoremap <silent> <Leader>gt :packadd vim-gutentags <cr>
-nnoremap <silent> <F9> :Vex! <cr>
-nnoremap <silent> <Leader>ve :Vex <cr>
-nnoremap <silent> <Leader>se :Sex <cr>
+nnoremap <silent> <F3> :YcmCompleter GoTo<cr>
+nnoremap <silent> <F4> :Ack! "\b<c-r><c-w>\b"
+nnoremap <silent> <Leader>gf :YcmCompleter GoToInclude<cr>
+nnoremap <silent> <c-p> :Files<cr>
+nnoremap <silent> <Leader>ag :Ag<cr>
+nnoremap <silent> <F8> :Vex!<cr>
+nnoremap <silent> <F9> :BTags<cr>
+nnoremap <silent> <F10> :packadd vim-gutentags<cr>
+nnoremap <silent> <Leader>ve :Vex<cr>
+nnoremap <silent> <Leader>se :Sex<cr>
 
 
 """" netrw config """"
@@ -218,3 +218,15 @@ let g:netrw_banner = 0
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
+" key mappings from ':h g:ack_mappings'
+let g:ack_mappings = {
+            \ "p": "<CR><C-W>j",
+            \ "h": "",
+            \ "ho": "<C-W><CR><C-W>K",
+            \ "H": "",
+            \ "gh": "<C-W><CR><C-W>K<C-W>b",
+            \ "v": "",
+            \ "vo": "<C-W><CR><C-W>H<C-W>b<C-W>J<C-W>t",
+            \ "gv": "<C-W><CR><C-W>H<C-W>b<C-W>J",
+            \ }
