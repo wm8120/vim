@@ -27,6 +27,7 @@ set incsearch
 set smartcase
 set updatetime=800
 set splitright
+set colorcolumn=100
 let mapleader = ","
 nnoremap ,, ,
 nnoremap , <NOP>
@@ -125,11 +126,12 @@ let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
 
 """" YouCompleteMe """"
 let g:ycm_add_preview_to_completeopt = 0
-let g:ycm_show_diagnostics_ui = 0
+" let g:ycm_show_diagnostics_ui = 0
 let g:ycm_server_log_level = 'info'
 let g:ycm_min_num_identifier_candidate_chars = 2
 let g:ycm_collect_identifiers_from_comments_and_strings = 1
 let g:ycm_complete_in_strings=1
+let g:ycm_complete_in_comments=1
 let g:ycm_key_invoke_completion = '<c-z>'
 let g:ycm_confirm_extra_conf = 0
 set completeopt=menu,menuone
@@ -208,6 +210,8 @@ nnoremap <silent> <F9> :BTags<cr>
 nnoremap <silent> <F10> :packadd vim-gutentags<cr>
 nnoremap <silent> <Leader>ve :Vex<cr>
 nnoremap <silent> <Leader>se :Sex<cr>
+" manual trigger remove trailing whites
+nnoremap <silent> <Leader>rw :%s/\s\+$//ec<cr>
 
 
 """" netrw config """"
@@ -230,3 +234,7 @@ let g:ack_mappings = {
             \ "vo": "<C-W><CR><C-W>H<C-W>b<C-W>J<C-W>t",
             \ "gv": "<C-W><CR><C-W>H<C-W>b<C-W>J",
             \ }
+
+
+"""" easymotion """"
+map <space> <Plug>(easymotion-prefix)

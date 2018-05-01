@@ -61,3 +61,6 @@
 [submodule "pack/plugins/start/bufexplorer"]
 	path = pack/plugins/start/bufexplorer
 	url = https://github.com/wm8120/bufexplorer.git
+[submodule "pack/plugins/start/easymotion"]
+	path = pack/plugins/start/easymotion
+	url = https://github.com/easymotion/vim-easymotion.git
