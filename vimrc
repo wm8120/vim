@@ -27,7 +27,7 @@ set incsearch
 set smartcase
 set updatetime=800
 set splitright
-set colorcolumn=100
+set colorcolumn=120
 let mapleader = ","
 nnoremap ,, ,
 nnoremap , <NOP>
@@ -48,7 +48,7 @@ set autoindent
 
 
 """"" Color Theme """""
-set background=dark     "bg can set to light or dark
+set background=light     "bg can set to light or dark
 colorscheme primary
 
 
