@@ -195,7 +195,11 @@ let g:airline_powerline_fonts = 1
 
 " adaptive color
 if g:colors_name == 'primary'
-    let g:airline_theme = 'base16_google'
+    if &background == 'dark'
+        let g:airline_theme = 'base16_google'
+    else
+        let g:airline_theme = 'tomorrow'
+    endif
 endif
 
 
