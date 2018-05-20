@@ -1,6 +1,7 @@
 #!/bin/bash
 
 sudo apt install cmake
+sudo apt install clang-format
 
 git submodule update --init
 

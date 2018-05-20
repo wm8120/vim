@@ -5,3 +5,8 @@
 # spell binary file #
 #####################
 spell/*.spl
+
+###########################
+#  some private snippets  #
+###########################
+UltiSnips/*_private.snippets

@@ -64,3 +64,18 @@
 [submodule "pack/plugins/start/easymotion"]
 	path = pack/plugins/start/easymotion
 	url = https://github.com/easymotion/vim-easymotion.git
+[submodule "pack/plugins/start/vim-codefmt"]
+	path = pack/plugins/start/vim-codefmt
+	url = https://github.com/google/vim-codefmt.git
+[submodule "pack/plugins/start/vim-glaive"]
+	path = pack/plugins/start/vim-glaive
+	url = https://github.com/google/vim-glaive.git
+[submodule "pack/plugins/start/vim-maktaba"]
+	path = pack/plugins/start/vim-maktaba
+	url = https://github.com/google/vim-maktaba.git
+[submodule "pack/plugins/start/ultisnips"]
+	path = pack/plugins/start/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
+[submodule "pack/plugins/start/vim-snippets"]
+	path = pack/plugins/start/vim-snippets
+	url = https://github.com/honza/vim-snippets.git

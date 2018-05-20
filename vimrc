@@ -35,21 +35,26 @@ nnoremap , <NOP>
 
 """"" for python indent """""
 set expandtab
-set softtabstop=4
 
 
 """"" prevent expand tab in makefile """""
 autocmd FileType make setlocal noexpandtab
 
 
+"""" prevent colorcolumn shown in quickfix """"
+au FileType qf setlocal colorcolumn=
+au FileType netrw setlocal colorcolumn=
+
+
 """"" indent """""
 set shiftwidth=4
 set autoindent
+set smartindent
 
 
 """"" Color Theme """""
 set background=light     "bg can set to light or dark
-colorscheme primary
+colorscheme default
 
 
 """"" Italic Setting """""
@@ -152,6 +157,10 @@ let g:ycm_filetype_whitelist = {
             \ "sh":1,
             \ }
 
+" for UltiSnips expansion, remove <tab> and <s-tab> in the list
+let g:ycm_key_list_select_completion = ['<Down>']
+let g:ycm_key_list_previous_completion = ['<Up>']
+
 
 """" echodoc """"
 " set no show mode to prevent overlap function signation
@@ -242,3 +251,30 @@ let g:ack_mappings = {
 
 """" easymotion """"
 map <space> <Plug>(easymotion-prefix)
+
+
+"""" vim-codefmt """"
+augroup autoformat_settings
+  autocmd FileType bzl AutoFormatBuffer buildifier
+  autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
+  autocmd FileType dart AutoFormatBuffer dartfmt
+  autocmd FileType go AutoFormatBuffer gofmt
+  autocmd FileType gn AutoFormatBuffer gn
+  autocmd FileType html,css,json AutoFormatBuffer js-beautify
+  autocmd FileType java AutoFormatBuffer google-java-format
+  autocmd FileType python AutoFormatBuffer yapf
+  " Alternative: autocmd FileType python AutoFormatBuffer autopep8
+augroup END
+
+
+"""" cycling buffers """"
+nnoremap <silent> <c-tab> :bnext<CR>
+nnoremap <silent> <s-tab> :bprevious<CR>
+
+
+"""" ultisnips """"
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<Tab>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
