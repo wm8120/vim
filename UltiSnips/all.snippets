@@ -10,3 +10,13 @@ snippet	cr "A box for copyright information" b
 * Created by ${2:author} on `!v strftime("%m/%d/%Y")`
 */
 endsnippet
+
+######################
+#  snippet template  #
+######################
+
+snippet snip "Snippet description" b
+snippet ${1:trigger} ${2:description} ${3:b}
+${4}
+`!p snip.rv="endsnippet"`
+endsnippet
