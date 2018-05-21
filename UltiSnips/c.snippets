@@ -1,0 +1,42 @@
+
+priority -45
+
+#######################
+#  control statement  #
+#######################
+
+snippet for "for loop" b
+for($1; $2; $3) {
+${VISUAL}$0
+}
+endsnippet
+
+snippet if "if clause" b
+if(${1:/* condition */}) {
+${VISUAL}$0
+}
+endsnippet
+
+snippet elif "else if clause"
+else if(${1:/* condition */}) {
+${VISUAL}$0
+}
+endsnippet
+
+##################
+#  header guard  #
+##################
+snippet hgd "Header guard" b
+#ifndef ${1:`!p
+if not snip.c:
+	import string
+	name = re.sub(r'[^A-Za-z0-9]+','_', snip.fn).upper()
+	snip.rv = ('_%s_' % name).upper()
+else:
+	snip.rv = snip.c`}
+#define $1
+
+${VISUAL}$0
+
+#endif  // $1
+endsnippet

@@ -1,0 +1,38 @@
+
+###############
+#  namespace  #
+###############
+snippet ns "namespace" b
+namespace ${1:name}
+{
+	${VISUAL}$0
+}  // namespace $1
+endsnippet
+
+
+#######################
+#  control statments  #
+#######################
+snippet fora "for (auto i: )" b
+for (auto ${1:var} : ${2:structure}) {
+	$0
+}
+endsnippet
+
+snippet forar "for (auto i&: )" b
+for (auto ${1:reference}& : ${2:structure}) {
+	$0
+}
+endsnippet
+
+snippet forac "for (const auto i: )" b
+for (const auto ${1:var} : ${2:structure}) {
+	$0
+}
+endsnippet
+
+snippet foracr "for (const auto i&: )" b
+for (const auto ${1:reference}& : ${2:structure}) {
+	$0
+}
+endsnippet
