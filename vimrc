@@ -188,6 +188,8 @@ let g:echodoc_enable_at_startup = 1
 """" polyglot """"
 " will use vimtex instead
 let g:polyglot_disabled = ['latex']
+" set markdown indent
+let g:vim_markdown_new_list_item_indent = 2
 
 
 """" ale """"
