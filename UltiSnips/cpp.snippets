@@ -20,19 +20,66 @@ for (auto ${1:var} : ${2:structure}) {
 endsnippet
 
 snippet forar "for (auto i&: )" b
-for (auto ${1:reference}& : ${2:structure}) {
+for (auto& ${1:reference} : ${2:structure}) {
 	$0
 }
 endsnippet
 
-snippet forac "for (const auto i: )" b
+snippet forca "for (const auto i: )" b
 for (const auto ${1:var} : ${2:structure}) {
 	$0
 }
 endsnippet
 
-snippet foracr "for (const auto i&: )" b
-for (const auto ${1:reference}& : ${2:structure}) {
+snippet forcar "for (const auto i&: )" b
+for (const auto& ${1:reference} : ${2:structure}) {
 	$0
 }
+endsnippet
+
+###################
+#  std functions  #
+###################
+snippet mv "std::move" w
+std::move(${1:${VISUAL}})$0
+endsnippet
+
+snippet up "std::unique_ptr" w
+std::unique_ptr<$1> $0
+endsnippet
+
+snippet sp "std::shared_ptr" w
+std::shared_ptr<$1> $0
+endsnippet
+
+snippet wlock "unique lock" b
+{
+std::unique_lock<${1:std::mutex}> lock($2);
+${VISUAL}$0
+}
+endsnippet
+
+snippet slock "shared lock" b
+{
+std::shared_lock<${1:std::shared_timed_mutex}> lock($2);
+${VISUAL}$0
+}
+endsnippet
+
+####################
+#  gtest template  #
+####################
+snippet tcl "gtest class template" b
+class ${1:Name}TestGroup : public testing::Test {
+    protected:
+    $0
+    void SetUp() override {
+        ${2:/* SetUp logics */}
+    }
+    void TearDown() override {
+        ${3:/* TearDown logics */}
+    }
+};
+
+TEST_F(${1/(\w+).*/$1/}TestGroup, /* Test name */) {}
 endsnippet

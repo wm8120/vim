@@ -25,12 +25,20 @@ set smartcase
 set hlsearch
 set incsearch
 set smartcase
-set updatetime=800
+set autoread
+" set updatetime=800
 set splitright
 set colorcolumn=120
 let mapleader = ","
 nnoremap ,, ,
 nnoremap , <NOP>
+
+
+"""" Refresh buffer when files changes on disk """"
+autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
+" Notification after file change
+autocmd FileChangedShellPost *
+  \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 
 
 """"" for python indent """""
@@ -91,16 +99,24 @@ set directory=$HOME/.vimtmps/swap//
 set undodir=$HOME/.vimtmps/undo//
 
 
-" Uncomment the following to have Vim jump to the last position when
-" reopening a file
+"""" Vim jump to the last position when reopening a file """"
 if has("autocmd")
     au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
                 \| exe "normal! g'\"" | endif
 endif
 
 
-" Remove trailing empties on save
-autocmd BufWritePre <buffer> :%s/\s\+$//ec
+"""" Remove trailing empties on save, but exclude some file types """"
+fun! StripTrailingWhitespace()
+    " Only strip if the b:noStripeWhitespace variable isn't set
+    if exists('b:noStripWhitespace')
+        return
+    endif
+    %s/\s\+$//ec
+endfun
+
+autocmd FileType markdown let b:noStripWhitespace=1
+autocmd BufWritePre * call StripTrailingWhitespace()
 
 
 """" ctags config """"
@@ -225,6 +241,7 @@ nnoremap <silent> <Leader>ve :Vex<cr>
 nnoremap <silent> <Leader>se :Sex<cr>
 " manual trigger remove trailing whites
 nnoremap <silent> <Leader>rw :%s/\s\+$//ec<cr>
+nnoremap <silent> <Leader>w :w<cr>
 
 
 """" netrw config """"
