@@ -27,6 +27,7 @@ set incsearch
 set smartcase
 set autoread
 " set updatetime=800
+set noshowmode
 set splitright
 set colorcolumn=120
 let mapleader = ","
@@ -146,8 +147,10 @@ let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
 
 
 """" YouCompleteMe """"
-let g:ycm_add_preview_to_completeopt = 0
-" let g:ycm_show_diagnostics_ui = 0
+let g:ycm_add_preview_to_completeopt = 1
+" let g:ycm_autoclose_preview_window_after_completion = 0
+" let g:ycm_autoclose_preview_window_after_insertion = 0
+let g:ycm_show_diagnostics_ui = 1
 let g:ycm_server_log_level = 'info'
 let g:ycm_min_num_identifier_candidate_chars = 2
 let g:ycm_collect_identifiers_from_comments_and_strings = 1
@@ -176,13 +179,6 @@ let g:ycm_filetype_whitelist = {
 " for UltiSnips expansion, remove <tab> and <s-tab> in the list
 let g:ycm_key_list_select_completion = ['<Down>']
 let g:ycm_key_list_previous_completion = ['<Up>']
-
-
-"""" echodoc """"
-" set no show mode to prevent overlap function signation
-" mode can still be viewed in vim-airline
-set noshowmode
-let g:echodoc_enable_at_startup = 1
 
 
 """" polyglot """"
@@ -234,6 +230,7 @@ endif
 nnoremap <silent> <F3> :YcmCompleter GoTo<cr>
 nnoremap <silent> <F4> :Ack! "\b<c-r><c-w>\b"
 nnoremap <silent> <Leader>gf :YcmCompleter GoToInclude<cr>
+nnoremap <silent> <Leader>ft :YcmCompleter FixIt<cr>
 nnoremap <silent> <c-p> :Files<cr>
 nnoremap <silent> <Leader>ag :Ag<cr>
 nnoremap <silent> <F8> :Vex!<cr>
@@ -242,7 +239,7 @@ nnoremap <silent> <F10> :packadd vim-gutentags<cr>
 nnoremap <silent> <Leader>ve :Vex<cr>
 nnoremap <silent> <Leader>se :Sex<cr>
 " manual trigger remove trailing whites
-nnoremap <silent> <Leader>rw :%s/\s\+$//ec<cr>
+" nnoremap <silent> <Leader>rw :%s/\s\+$//ec<cr>
 nnoremap <silent> <Leader>w :w<cr>
 
 
@@ -297,3 +294,9 @@ let g:UltiSnipsExpandTrigger="<Tab>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+
+"""" CompleteParameters """"
+inoremap <silent><expr> <c-b> complete_parameter#pre_complete("()")
+let g:complete_parameter_use_ultisnips_mappings = 1
+let g:complete_parameter_echo_signature = 0
