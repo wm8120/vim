@@ -18,7 +18,7 @@ endif
 """" some common used config """"
 syntax on
 filetype plugin indent on
-set number
+" set number
 set ruler
 set ignorecase
 set smartcase
@@ -30,6 +30,7 @@ set autoread
 set noshowmode
 set splitright
 set colorcolumn=120
+let loaded_matchparen = 1
 let mapleader = ","
 nnoremap ,, ,
 nnoremap , <NOP>
@@ -62,8 +63,9 @@ set smartindent
 
 
 """"" Color Theme """""
-set background=light     "bg can set to light or dark
-colorscheme default
+set background=dark     "bg can set to light or dark
+" colorscheme Tomorrow-Night-Bright
+colorscheme primary
 
 
 """"" Italic Setting """""
@@ -147,7 +149,7 @@ let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
 
 
 """" YouCompleteMe """"
-let g:ycm_add_preview_to_completeopt = 1
+" let g:ycm_add_preview_to_completeopt = 1
 " let g:ycm_autoclose_preview_window_after_completion = 0
 " let g:ycm_autoclose_preview_window_after_insertion = 0
 let g:ycm_show_diagnostics_ui = 1
@@ -174,6 +176,7 @@ let g:ycm_filetype_whitelist = {
             \ "h":1,
             \ "hpp":1,
             \ "sh":1,
+            \ "python":1,
             \ }
 
 " for UltiSnips expansion, remove <tab> and <s-tab> in the list
@@ -240,7 +243,8 @@ nnoremap <silent> <Leader>ve :Vex<cr>
 nnoremap <silent> <Leader>se :Sex<cr>
 " manual trigger remove trailing whites
 " nnoremap <silent> <Leader>rw :%s/\s\+$//ec<cr>
-nnoremap <silent> <Leader>w :w<cr>
+nnoremap <silent> <Leader>w :w<cr>:pc<cr>
+nnoremap <silent> <Leader>bf :Buffers<cr>
 
 
 """" netrw config """"
@@ -298,5 +302,5 @@ let g:UltiSnipsEditSplit="vertical"
 
 """" CompleteParameters """"
 inoremap <silent><expr> <c-b> complete_parameter#pre_complete("()")
-let g:complete_parameter_use_ultisnips_mappings = 1
+" let g:complete_parameter_use_ultisnips_mappings = 0
 let g:complete_parameter_echo_signature = 0
