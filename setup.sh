@@ -1,9 +1,8 @@
 #!/bin/bash
 
-sudo apt install cmake
-sudo apt install clang-format
+sudo apt install cmake silversearcher-ag clang-format
 
-git submodule update --init
+git submodule update --init --recursive
 
 cd ./pack/plugins/start/YouCompleteMe/
 ./install.py --clang-completer

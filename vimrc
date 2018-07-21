@@ -64,8 +64,8 @@ set smartindent
 
 """"" Color Theme """""
 set background=dark     "bg can set to light or dark
-" colorscheme Tomorrow-Night-Bright
-colorscheme primary
+colorscheme Tomorrow-Night-Bright
+" colorscheme primary
 
 
 """"" Italic Setting """""
@@ -148,6 +148,11 @@ let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
 let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
 
 
+"""" Signify """"
+let g:signify_sign_show_text = 1
+let g:signify_sign_show_count = 0
+
+
 """" YouCompleteMe """"
 " let g:ycm_add_preview_to_completeopt = 1
 " let g:ycm_autoclose_preview_window_after_completion = 0
@@ -160,6 +165,8 @@ let g:ycm_complete_in_strings=1
 let g:ycm_complete_in_comments=1
 let g:ycm_key_invoke_completion = '<c-z>'
 let g:ycm_confirm_extra_conf = 0
+let g:ycm_error_symbol = 'E'
+let g:ycm_warning_symbol = 'W'
 set completeopt=menu,menuone
 
 noremap <c-z> <NOP>
@@ -217,7 +224,7 @@ set laststatus=2  "always show status bar
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 
 " adaptive color
 if g:colors_name == 'primary'
@@ -243,7 +250,7 @@ nnoremap <silent> <Leader>ve :Vex<cr>
 nnoremap <silent> <Leader>se :Sex<cr>
 " manual trigger remove trailing whites
 " nnoremap <silent> <Leader>rw :%s/\s\+$//ec<cr>
-nnoremap <silent> <Leader>w :w<cr>:pc<cr>
+nnoremap <silent> <Leader>w :w<cr>
 nnoremap <silent> <Leader>bf :Buffers<cr>
 
 
@@ -276,15 +283,16 @@ map <space> <Plug>(easymotion-prefix)
 """" vim-codefmt """"
 augroup autoformat_settings
   autocmd FileType bzl AutoFormatBuffer buildifier
-  autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
+  " autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
   autocmd FileType dart AutoFormatBuffer dartfmt
   autocmd FileType go AutoFormatBuffer gofmt
   autocmd FileType gn AutoFormatBuffer gn
   autocmd FileType html,css,json AutoFormatBuffer js-beautify
   autocmd FileType java AutoFormatBuffer google-java-format
   autocmd FileType python AutoFormatBuffer yapf
-  " Alternative: autocmd FileType python AutoFormatBuffer autopep8
+  " autocmd FileType python AutoFormatBuffer autopep8
 augroup END
+vnoremap <silent> <leader>f :FormatLines<cr>
 
 
 """" cycling buffers """"
