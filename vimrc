@@ -148,11 +148,6 @@ let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
 let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
 
 
-"""" Signify """"
-let g:signify_sign_show_text = 1
-let g:signify_sign_show_count = 0
-
-
 """" YouCompleteMe """"
 " let g:ycm_add_preview_to_completeopt = 1
 " let g:ycm_autoclose_preview_window_after_completion = 0
