@@ -26,7 +26,7 @@ set hlsearch
 set incsearch
 set smartcase
 set autoread
-" set updatetime=800
+set updatetime=100
 set noshowmode
 set splitright
 set colorcolumn=120
@@ -245,7 +245,7 @@ nnoremap <silent> <Leader>ve :Vex<cr>
 nnoremap <silent> <Leader>se :Sex<cr>
 " manual trigger remove trailing whites
 " nnoremap <silent> <Leader>rw :%s/\s\+$//ec<cr>
-nnoremap <silent> <Leader>w :w<cr>
+nnoremap <silent> <Leader>w :w<cr>:pc<cr>
 nnoremap <silent> <Leader>bf :Buffers<cr>
 
 
