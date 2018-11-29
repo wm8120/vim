@@ -1,0 +1,24 @@
+###################
+#  kernel module  #
+###################
+
+snippet module "A skeleton for kernel module" b
+#include <linux/init.h>
+#include <linux/module.h>
+
+static int __init ${1:module_name}_init(void) {
+    $0
+    pr_info("${1:module_name} init.");
+    return 0;
+}
+
+static void __exit ${1:module_name}_fini(void) {
+    pr_info("${1:module_name} exit.");
+}
+
+module_init(${1:module_name}_init);
+module_exit(${1:module_name}_fini);
+
+MODULE_LICENSE("${2:GPL}");
+MODULE_AUTHOR("${3:AUTHOR}");
+endsnippet
