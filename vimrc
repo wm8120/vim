@@ -64,8 +64,10 @@ set smartindent
 
 """"" Color Theme """""
 set background=dark     "bg can set to light or dark
-colorscheme Tomorrow-Night-Bright
+" colorscheme Tomorrow-Night-Bright
 " colorscheme primary
+" colorscheme elflord
+colorscheme ron
 
 
 """"" Italic Setting """""
