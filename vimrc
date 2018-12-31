@@ -18,7 +18,7 @@ endif
 """" some common used config """"
 syntax on
 filetype plugin indent on
-" set number
+set number
 set ruler
 set ignorecase
 set smartcase
@@ -223,7 +223,7 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_powerline_fonts = 1
 
-" adaptive color
+" adaptive color for 'primary' colorscheme
 if g:colors_name == 'primary'
     if &background == 'dark'
         let g:airline_theme = 'base16_google'
@@ -309,3 +309,9 @@ let g:UltiSnipsEditSplit="vertical"
 inoremap <silent><expr> <c-b> complete_parameter#pre_complete("()")
 " let g:complete_parameter_use_ultisnips_mappings = 0
 let g:complete_parameter_echo_signature = 0
+nmap <c-j> <Plug>(complete_parameter#goto_next_parameter)
+imap <c-j> <Plug>(complete_parameter#goto_next_parameter)
+smap <c-j> <Plug>(complete_parameter#goto_next_parameter)
+nmap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
+imap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
+smap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
