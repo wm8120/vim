@@ -223,7 +223,7 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_powerline_fonts = 1
 
-" adaptive color for 'primary' colorscheme
+" adaptive color for colorschemes
 if g:colors_name == 'primary'
     if &background == 'dark'
         let g:airline_theme = 'base16_google'
@@ -232,6 +232,9 @@ if g:colors_name == 'primary'
     endif
 endif
 
+if g:colors_name == 'ron'
+    let g:airline_theme = 'angr'
+endif
 
 """" key bindings """"
 nnoremap <silent> <F3> :YcmCompleter GoTo<cr>
