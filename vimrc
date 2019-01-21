@@ -18,7 +18,7 @@ endif
 """" some common used config """"
 syntax on
 filetype plugin indent on
-set number
+" set number
 set ruler
 set ignorecase
 set smartcase
@@ -64,10 +64,12 @@ set smartindent
 
 """"" Color Theme """""
 set background=dark     "bg can set to light or dark
+" colorscheme Tomorrow-Night
 " colorscheme Tomorrow-Night-Bright
+colorscheme Tomorrow-Night-Eighties
 " colorscheme primary
 " colorscheme elflord
-colorscheme ron
+" colorscheme ron
 
 
 """"" Italic Setting """""
@@ -232,8 +234,14 @@ if g:colors_name == 'primary'
     endif
 endif
 
-if g:colors_name == 'ron'
-    let g:airline_theme = 'angr'
+" if g:colors_name == 'ron'
+"   let g:airline_theme = 'angr'
+"   let g:airline_theme = 'simple'
+" endif
+
+if g:colors_name == 'Tomorrow-Night-Eighties'
+    autocmd VimEnter * hi Normal ctermbg=none
+    autocmd VimEnter * hi NonText ctermbg=none
 endif
 
 """" key bindings """"
@@ -252,6 +260,8 @@ nnoremap <silent> <Leader>se :Sex<cr>
 " nnoremap <silent> <Leader>rw :%s/\s\+$//ec<cr>
 nnoremap <silent> <Leader>w :w<cr>:pc<cr>
 nnoremap <silent> <Leader>bf :Buffers<cr>
+" toggle line number
+nnoremap <silent> <Leader>ln :set number!<cr>
 
 
 """" netrw config """"
