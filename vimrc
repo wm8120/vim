@@ -66,10 +66,11 @@ set smartindent
 set background=dark     "bg can set to light or dark
 " colorscheme Tomorrow-Night
 " colorscheme Tomorrow-Night-Bright
-colorscheme Tomorrow-Night-Eighties
+" colorscheme Tomorrow-Night-Eighties
 " colorscheme primary
 " colorscheme elflord
 " colorscheme ron
+colorscheme wombat256mod
 
 
 """"" Italic Setting """""
@@ -239,9 +240,15 @@ endif
 "   let g:airline_theme = 'simple'
 " endif
 
-if g:colors_name == 'Tomorrow-Night-Eighties'
+" if g:colors_name == 'Tomorrow-Night-Eighties'
+if g:colors_name == 'wombat256mod'
     autocmd VimEnter * hi Normal ctermbg=none
     autocmd VimEnter * hi NonText ctermbg=none
+    autocmd VimEnter * hi LineNr ctermbg=none
+    autocmd VimEnter * hi GitGutterAddDefault ctermbg=none
+    autocmd VimEnter * hi GitGutterChangeDefault ctermbg=none
+    autocmd VimEnter * hi GitGutterChangeDeleteDefault ctermbg=none
+    autocmd VimEnter * hi GitGutterDeleteDefault ctermbg=none
 endif
 
 """" key bindings """"

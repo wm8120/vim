@@ -82,3 +82,9 @@
 [submodule "pack/plugins/opt/promptline"]
 	path = pack/plugins/opt/promptline
 	url = https://github.com/edkolev/promptline.vim.git
+[submodule "pack/colors/start/wombat256"]
+	path = pack/colors/start/wombat256
+	url = https://github.com/vim-scripts/wombat256.vim.git
+[submodule "pack/colors/start/zenburn"]
+	path = pack/colors/start/zenburn
+	url = https://github.com/jnurmine/Zenburn.git
