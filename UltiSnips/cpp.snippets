@@ -66,6 +66,16 @@ ${VISUAL}$0
 }
 endsnippet
 
+snippet upbuf "use unique_ptr to manage raw buffer" b
+std::unique_ptr<${1:void}, decltype(&std::free)> ${2:buffer}(${3:nullptr}, std::free);
+${2/(\w+).*/$1/}.reset($0);  // for later assignment
+endsnippet
+
+snippet spbuf "use shared_ptr to manage raw buffer" b
+std::shared_ptr<${1:void}> ${2:buffer}(${3:nullptr}, free);
+${2/(\w+).*/$1/}.reset($0);  // for later assignment
+endsnippet
+
 ####################
 #  gtest template  #
 ####################

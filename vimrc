@@ -242,13 +242,15 @@ endif
 
 " if g:colors_name == 'Tomorrow-Night-Eighties'
 if g:colors_name == 'wombat256mod'
+    set fillchars+=vert:│
     autocmd VimEnter * hi Normal ctermbg=none
     autocmd VimEnter * hi NonText ctermbg=none
     autocmd VimEnter * hi LineNr ctermbg=none
-    autocmd VimEnter * hi GitGutterAddDefault ctermbg=none
+    autocmd VimEnter * hi GitGutterAdd ctermbg=none
     autocmd VimEnter * hi GitGutterChangeDefault ctermbg=none
     autocmd VimEnter * hi GitGutterChangeDeleteDefault ctermbg=none
-    autocmd VimEnter * hi GitGutterDeleteDefault ctermbg=none
+    autocmd VimEnter * hi GitGutterDelete ctermbg=none
+    autocmd VimEnter * hi VertSplit ctermbg=NONE ctermfg=yellow
 endif
 
 """" key bindings """"
