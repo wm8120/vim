@@ -118,3 +118,6 @@
 	path = pack/colors/start/zenburn
 	url = https://github.com/jnurmine/Zenburn.git
         branch = master
+[submodule "pack/plugins/start/AnsiEsc"]
+	path = pack/plugins/start/AnsiEsc
+	url = https://github.com/powerman/vim-plugin-AnsiEsc.git

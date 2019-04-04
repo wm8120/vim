@@ -250,7 +250,7 @@ if g:colors_name == 'wombat256mod'
     autocmd VimEnter * hi GitGutterChangeDefault ctermbg=none
     autocmd VimEnter * hi GitGutterChangeDeleteDefault ctermbg=none
     autocmd VimEnter * hi GitGutterDelete ctermbg=none
-    autocmd VimEnter * hi VertSplit ctermbg=NONE ctermfg=yellow
+    " autocmd VimEnter * hi VertSplit ctermbg=NONE ctermfg=yellow
 endif
 
 """" key bindings """"
@@ -337,3 +337,7 @@ smap <c-j> <Plug>(complete_parameter#goto_next_parameter)
 nmap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
 imap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
 smap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
+
+
+"""" AnsiEsc """"
+autocmd BufRead *.log AnsiEsc
